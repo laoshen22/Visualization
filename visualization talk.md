@@ -33,7 +33,7 @@ Prejudice Atlas
 
 =====================================================
 
-<video controls width="900" height="1000" preload="auto">
+<video controls width="900" height="600" preload="auto">
   <source src="video.mp4" type="video/mp4">
   <source src="video.ogg" type="video/ogg">
 Your browser does not support the video tag.
@@ -46,14 +46,14 @@ googleVis - Motion Chart
 =========================
 
 <!-- MotionChart generated in R 3.2.3 by googleVis 0.5.10 package -->
-<!-- Sun Jul 31 12:36:23 2016 -->
+<!-- Sun Jul 31 13:51:16 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMotionChartID14b5512201159 () {
+function gvisDataMotionChartID152255f66b687 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -12619,15 +12619,15 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMotionChartID14b5512201159() {
-var data = gvisDataMotionChartID14b5512201159();
+function drawChartMotionChartID152255f66b687() {
+var data = gvisDataMotionChartID152255f66b687();
 var options = {};
 options["width"] =    800;
 options["height"] =    410;
 options["state"] = "\n{\"xAxisOption\":\"2\",\"yAxisOption\":\"3\",\"sizeOption\":\"4\",\"dimensions\":{\"iconDimensions\":[\"dim0\"]}}\n";
 
     var chart = new google.visualization.MotionChart(
-    document.getElementById('MotionChartID14b5512201159')
+    document.getElementById('MotionChartID152255f66b687')
     );
     chart.draw(data,options);
     
@@ -12651,9 +12651,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMotionChartID14b5512201159);
+callbacks.push(drawChartMotionChartID152255f66b687);
 })();
-function displayChartMotionChartID14b5512201159() {
+function displayChartMotionChartID152255f66b687() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -12677,11 +12677,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID14b5512201159"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID152255f66b687"></script>
  
 <!-- divChart -->
   
-<div id="MotionChartID14b5512201159" 
+<div id="MotionChartID152255f66b687" 
   style="width: 800; height: 410;">
 </div>
 
@@ -12830,14 +12830,14 @@ callbacks.shift()();
 ==================================================
 
 <!-- GeoChart generated in R 3.2.3 by googleVis 0.5.10 package -->
-<!-- Sun Jul 31 12:36:24 2016 -->
+<!-- Sun Jul 31 13:51:17 2016 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataGeoChartID14b5566e6d6e9 () {
+function gvisDataGeoChartID152252672ed8f () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -12934,7 +12934,7 @@ return(data);
 
 
 // jsData 
-function gvisDataTableID14b553d278fc6 () {
+function gvisDataTableID15225434a5b01 () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -13030,18 +13030,18 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartGeoChartID14b5566e6d6e9() {
-var data = gvisDataGeoChartID14b5566e6d6e9();
+function drawChartGeoChartID152252672ed8f() {
+var data = gvisDataGeoChartID152252672ed8f();
 var options = {};
-options["width"] =    600;
-options["height"] =    400;
+options["width"] =    800;
+options["height"] =    600;
 options["region"] = "CN";
 options["displayMode"] = "regions";
 options["resolution"] = "provinces";
 options["colorAxis"] = {colors:['#FFF7F3', '#DD3497']};
 
     var chart = new google.visualization.GeoChart(
-    document.getElementById('GeoChartID14b5566e6d6e9')
+    document.getElementById('GeoChartID152252672ed8f')
     );
     chart.draw(data,options);
     
@@ -13051,15 +13051,15 @@ options["colorAxis"] = {colors:['#FFF7F3', '#DD3497']};
 
 
 // jsDrawChart
-function drawChartTableID14b553d278fc6() {
-var data = gvisDataTableID14b553d278fc6();
+function drawChartTableID15225434a5b01() {
+var data = gvisDataTableID15225434a5b01();
 var options = {};
 options["allowHtml"] = true;
-options["height"] =    300;
-options["width"] =    200;
+options["height"] =    600;
+options["width"] =    300;
 
     var chart = new google.visualization.Table(
-    document.getElementById('TableID14b553d278fc6')
+    document.getElementById('TableID15225434a5b01')
     );
     chart.draw(data,options);
     
@@ -13083,9 +13083,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartGeoChartID14b5566e6d6e9);
+callbacks.push(drawChartGeoChartID152252672ed8f);
 })();
-function displayChartGeoChartID14b5566e6d6e9() {
+function displayChartGeoChartID152252672ed8f() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -13122,9 +13122,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartTableID14b553d278fc6);
+callbacks.push(drawChartTableID15225434a5b01);
 })();
-function displayChartTableID14b553d278fc6() {
+function displayChartTableID15225434a5b01() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -13148,11 +13148,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID14b5566e6d6e9"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartGeoChartID152252672ed8f"></script>
 
 
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID14b553d278fc6"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartTableID15225434a5b01"></script>
  
 <table border="0">
 <tr>
@@ -13160,8 +13160,8 @@ callbacks.shift()();
 
 <!-- divChart -->
   
-<div id="GeoChartID14b5566e6d6e9" 
-  style="width: 600; height: 400;">
+<div id="GeoChartID152252672ed8f" 
+  style="width: 800; height: 600;">
 </div>
 
 </td>
@@ -13169,13 +13169,354 @@ callbacks.shift()();
 
 <!-- divChart -->
   
-<div id="TableID14b553d278fc6" 
-  style="width: 200; height: 300;">
+<div id="TableID15225434a5b01" 
+  style="width: 300; height: 600;">
 </div>
 
 </td>
 </tr>
 </table>
+
+
+普惠零首付逾期分布
+==================================================
+
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/css/nv.d3.css>
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/css/rNVD3.css>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/js/jquery-1.8.2.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/js/d3.v3.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/js/nv.d3.min-new.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.2/Resources/library/rCharts/libraries/nvd3/js/fisheye.js></script> 
+ <style>
+  .rChart {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 800px;
+    height: 400px;
+  }  
+  </style>
+<div id = 'chart152251fbb2346' class = 'rChart nvd3'></div>
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart152251fbb2346()
+    });
+    function drawchart152251fbb2346(){  
+      var opts = {
+ "dom": "chart152251fbb2346",
+"width":    800,
+"height":    400,
+"x": "Prov.prov",
+"y": "proportion",
+"group": "model",
+"type": "multiBarChart",
+"id": "chart152251fbb2346" 
+},
+        data = [
+ {
+ "Prov.prov": "安徽",
+"model": "Prop.nonzero",
+"rank": "1",
+"proportion":              0 
+},
+{
+ "Prov.prov": "福建",
+"model": "Prop.nonzero",
+"rank": "2",
+"proportion":              0 
+},
+{
+ "Prov.prov": "甘肃",
+"model": "Prop.nonzero",
+"rank": "3",
+"proportion":           0.67 
+},
+{
+ "Prov.prov": "广东",
+"model": "Prop.nonzero",
+"rank": "4",
+"proportion":              0 
+},
+{
+ "Prov.prov": "广西",
+"model": "Prop.nonzero",
+"rank": "5",
+"proportion": null 
+},
+{
+ "Prov.prov": "贵州",
+"model": "Prop.nonzero",
+"rank": "6",
+"proportion":              0 
+},
+{
+ "Prov.prov": "河北",
+"model": "Prop.nonzero",
+"rank": "7",
+"proportion":           0.06 
+},
+{
+ "Prov.prov": "河南",
+"model": "Prop.nonzero",
+"rank": "8",
+"proportion":            0.5 
+},
+{
+ "Prov.prov": "黑龙江",
+"model": "Prop.nonzero",
+"rank": "9",
+"proportion":              0 
+},
+{
+ "Prov.prov": "湖北",
+"model": "Prop.nonzero",
+"rank": "10",
+"proportion":           0.33 
+},
+{
+ "Prov.prov": "吉林",
+"model": "Prop.nonzero",
+"rank": "11",
+"proportion": null 
+},
+{
+ "Prov.prov": "江苏",
+"model": "Prop.nonzero",
+"rank": "12",
+"proportion":              0 
+},
+{
+ "Prov.prov": "辽宁",
+"model": "Prop.nonzero",
+"rank": "13",
+"proportion":            0.5 
+},
+{
+ "Prov.prov": "内蒙古",
+"model": "Prop.nonzero",
+"rank": "14",
+"proportion":           0.59 
+},
+{
+ "Prov.prov": "山东",
+"model": "Prop.nonzero",
+"rank": "15",
+"proportion":            0.5 
+},
+{
+ "Prov.prov": "山西",
+"model": "Prop.nonzero",
+"rank": "16",
+"proportion":           0.05 
+},
+{
+ "Prov.prov": "陕西",
+"model": "Prop.nonzero",
+"rank": "17",
+"proportion":              0 
+},
+{
+ "Prov.prov": "上海",
+"model": "Prop.nonzero",
+"rank": "18",
+"proportion": null 
+},
+{
+ "Prov.prov": "四川",
+"model": "Prop.nonzero",
+"rank": "19",
+"proportion":              0 
+},
+{
+ "Prov.prov": "云南",
+"model": "Prop.nonzero",
+"rank": "20",
+"proportion":           0.19 
+},
+{
+ "Prov.prov": "重庆",
+"model": "Prop.nonzero",
+"rank": "21",
+"proportion":           0.12 
+},
+{
+ "Prov.prov": "安徽",
+"model": "prop.zero",
+"rank": "1",
+"proportion":           0.33 
+},
+{
+ "Prov.prov": "福建",
+"model": "prop.zero",
+"rank": "2",
+"proportion":              0 
+},
+{
+ "Prov.prov": "甘肃",
+"model": "prop.zero",
+"rank": "3",
+"proportion": null 
+},
+{
+ "Prov.prov": "广东",
+"model": "prop.zero",
+"rank": "4",
+"proportion":            0.3 
+},
+{
+ "Prov.prov": "广西",
+"model": "prop.zero",
+"rank": "5",
+"proportion":              0 
+},
+{
+ "Prov.prov": "贵州",
+"model": "prop.zero",
+"rank": "6",
+"proportion":           0.14 
+},
+{
+ "Prov.prov": "河北",
+"model": "prop.zero",
+"rank": "7",
+"proportion":           0.07 
+},
+{
+ "Prov.prov": "河南",
+"model": "prop.zero",
+"rank": "8",
+"proportion": null 
+},
+{
+ "Prov.prov": "黑龙江",
+"model": "prop.zero",
+"rank": "9",
+"proportion":              0 
+},
+{
+ "Prov.prov": "湖北",
+"model": "prop.zero",
+"rank": "10",
+"proportion":              0 
+},
+{
+ "Prov.prov": "吉林",
+"model": "prop.zero",
+"rank": "11",
+"proportion": null 
+},
+{
+ "Prov.prov": "江苏",
+"model": "prop.zero",
+"rank": "12",
+"proportion":              0 
+},
+{
+ "Prov.prov": "辽宁",
+"model": "prop.zero",
+"rank": "13",
+"proportion": null 
+},
+{
+ "Prov.prov": "内蒙古",
+"model": "prop.zero",
+"rank": "14",
+"proportion":           0.28 
+},
+{
+ "Prov.prov": "山东",
+"model": "prop.zero",
+"rank": "15",
+"proportion":           0.25 
+},
+{
+ "Prov.prov": "山西",
+"model": "prop.zero",
+"rank": "16",
+"proportion":           0.06 
+},
+{
+ "Prov.prov": "陕西",
+"model": "prop.zero",
+"rank": "17",
+"proportion":              0 
+},
+{
+ "Prov.prov": "上海",
+"model": "prop.zero",
+"rank": "18",
+"proportion": null 
+},
+{
+ "Prov.prov": "四川",
+"model": "prop.zero",
+"rank": "19",
+"proportion":              0 
+},
+{
+ "Prov.prov": "云南",
+"model": "prop.zero",
+"rank": "20",
+"proportion":           0.03 
+},
+{
+ "Prov.prov": "重庆",
+"model": "prop.zero",
+"rank": "21",
+"proportion":           0.15 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        
+          
+        
+
+        
+        
+        
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+
+
+
 
 Simpsons Paradox
 ====================================================

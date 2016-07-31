@@ -50,7 +50,7 @@ Prejudice Atlas
 
 =====================================================
 
-<video controls width="900" height="1000" preload="auto">
+<video controls width="900" height="600" preload="auto">
   <source src="video.mp4" type="video/mp4">
   <source src="video.ogg" type="video/ogg">
 Your browser does not support the video tag.
@@ -292,15 +292,37 @@ Geo <- gvisGeoChart(Prov, locationvar="prov", colorvar="Zero.down.payment",
                                        resolution="provinces",
                                        colorAxis="{colors:['#FFF7F3', '#DD3497']}",
                                        #backgroundColor="#E7E1EF",
-                                       width=600, height=400))
-Tbl <- gvisTable(Prov[,c("prov","Zero.down.payment")], options=list(height=300, width=200))
-plot(gvisMerge(Geo, Tbl, horizontal=TRUE))
+                                       width=800, height=600))
+Tbl <- gvisTable(Prov[,c("prov","Zero.down.payment")], options=list(height=600, width=300))
 G<-gvisMerge(Geo, Tbl, horizontal=TRUE)
 print(G,"chart")
-#plot(Geo)
 
 
 ```
+
+
+普惠零首付逾期分布
+==================================================
+
+```{r,results='asis',message=FALSE,echo=FALSE, comment = NA}
+Prov=read.csv("dat_by_prov.csv")
+Prov$prov=dat1$省
+#Rank frequency
+r1=Prov$Prop.nonzero
+r2=Prov$prop.zero
+proportion=round(c(r1,r2),2)
+model=factor(rep(1:2,each=21), labels=c("Prop.nonzero","prop.zero"))
+rank=factor(rep(1:21,2))
+p=data.frame(Prov$prov,model,rank,proportion)
+
+
+require(rCharts)
+n1 <- nPlot(proportion ~ Prov.prov, group = "model", data = p, type = "multiBarChart")
+n1$show("inline", include_assets = TRUE, cdn = F)
+```
+
+
+
 
 Simpsons Paradox
 ====================================================
