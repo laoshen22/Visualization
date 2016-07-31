@@ -1,0 +1,336 @@
+数据可视化 Visualization
+========================================================
+author: Bingyi Jing
+date: `r format(Sys.Date(), format="%B %d %Y")`
+autosize: true
+transition: rotate
+
+
+
+
+
+
+========================================================
+
+![alt text](pic1.png)
+
+```{r,results='asis',message=FALSE,echo=FALSE, comment = NA,eval=FALSE}
+library(DT)
+
+num=c(11564,34356,23423,56756,72334,56787,23424,45764,34532,23423,34532)
+city=c("北京","上海","广州","深圳","成都","南京","昆明","杭州","石家庄","天津","重庆")
+data=data.frame(city,num)
+library('knitr')
+kable(head(data), format = "markdown")
+
+
+
+```
+
+
+========================================================
+
+![alt text](pic2.png)
+
+```{r,results='asis',message=FALSE,echo=FALSE, comment = NA, eval=FALSE}
+
+require(rCharts)
+n1 <- nPlot(num ~ city, group = "city", data = data, type = "multiBarChart")
+n1$show("inline", include_assets = TRUE, cdn = F)
+
+```
+
+Prejudice Atlas
+======================================================
+
+
+
+<img src="world-according-to-the-united-states-of-america.png" style="background-color:transparent; border:0px; box-shadow:none;" height="600px" width="1000px"></img>
+
+
+=====================================================
+
+<video controls width="900" height="1000" preload="auto">
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+
+
+
+googleVis - Motion Chart
+=========================
+
+```{r results = 'asis', echo=F}
+require(googleVis)
+library("rdatamarket")
+dminit(NULL)
+
+# Pull in life expectancy and population data
+life_expectancy <- dmlist("15r2!hrp")
+population <- dmlist("1cfl!r3d")
+gdp=dmlist("15c9!hd1")
+
+library("plyr")
+
+# Rename the Value for each dataset
+names(gdp)[3] <- "GDP"
+names(life_expectancy)[3] <- "LifeExpectancy"
+names(population)[3] <- "Population"
+
+# Use plyr to join your three data frames into one: `development` 
+gdp_life_exp <- join(gdp, life_expectancy)
+development <- join(gdp_life_exp, population)
+
+# development and selection are available in the workspace
+selection=c(  "Afghanistan",    "Australia",      "Austria",        "Belgium",       
+              "Bolivia" ,       "Brazil" ,        "Cambodia",       "Azerbaijan",    
+              "Chile"  ,        "China" ,         "Denmark"  ,      "Estonia"    ,   
+              "Ethiopia"  ,     "Finland",        "France"   ,      "Georgia"    ,   
+              "Germany"  ,      "Ghana"   ,       "Greece"    ,     "India"       ,  
+              "Indonesia" ,     "Iraq"     ,      "Italy"      ,    "Japan"        , 
+              "Lithuania" ,     "Luxembourg",     "Mexico"      ,   "New Zealand"   ,
+              "Niger"      ,    "Norway"     ,    "Poland"       ,  "Portugal"      ,
+              "Rwanda" ,        "Somalia"     ,   "South Africa"  , "Spain"         ,
+              "Sweden"  ,       "Switzerland"  ,  "Turkey"         ,"Uganda"        ,
+              "Ukraine"  ,      "United Kingdom", "United States"  ,"Vietnam"  )
+
+# Only include data on or before 2008 and inspect the tail of the data frame
+development_complete <- subset(development, Year <= 2008)
+
+# Subset development_complete: keep only countries in selection
+development_motion <- subset(development_complete, Country %in% selection)
+
+
+
+# Update the interactive motion chart
+motion_graph <- gvisMotionChart(development_motion,
+                                idvar = "Country",
+                                timevar = "Year",
+                                xvar = "GDP",
+                                yvar = "LifeExpectancy",
+                                sizevar = "Population",
+                                options=list(width=800, height=410))
+
+# Plot motion_graph
+print(motion_graph, tag='chart')
+
+```
+
+
+
+可视化作用
+========================================================
+
+
+- 一图胜万言
+- 人们天生对图形比文字更敏感
+- 辅助分析数据：
+    - 起初：有助获得模式，发现异常值；
+    - 结尾：有助展示结果。
+
+
+美国各州同性婚姻状况
+======================================================
+
+[网站](http://www.nytimes.com/interactive/2015/03/04/us/gay-marriage-state-by-state.html?_r=0)
+
+<img src="Gay Marriage.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+
+
+创意工作者在英国分布状况
+======================================================
+
+[网站](http://www.nesta.org.uk/blog/where-do-creatives-cluster)
+
+<img src="creatives.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="900px"></img>
+
+
+
+你能喝多少酒
+======================================================
+
+[网站](http://flowingdata.com/2016/07/11/how-much-alcohol-americans-drink/)
+
+<img src="alcohol.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="900px"></img>
+
+
+2014年的美国职业收入
+======================================================
+
+[网站](http://flowingdata.com/2016/06/28/distributions-of-annual-income/)
+
+<img src="incomes.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="900px"></img>
+
+
+死亡的原因
+======================================================
+
+[网站](http://flowingdata.com/2016/01/05/causes-of-death/)
+
+<img src="death.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="900px"></img>
+
+
+你将如何死亡
+======================================================
+
+[网站](http://flowingdata.com/2016/01/19/how-you-will-die/)
+
+<img src="cause.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+
+
+你嫁（娶）给谁
+======================================================
+
+[网站](http://www.bloomberg.com/graphics/2016-who-marries-whom/)
+
+<img src="marry.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+
+
+
+单身
+======================================================
+
+[网站](http://flowingdata.com/2016/03/10/never-been-married/)
+
+<img src="single.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+
+
+美国民族分布
+======================================================
+
+[网站](http://flowingdata.com/2015/05/04/map-of-most-common-race/)
+
+<img src="race.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+
+
+世界移民状态
+======================================================
+
+[网站](http://charts.animateddata.co.uk/worldmigration/)
+
+<img src="immigrate.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+
+
+著名创作者的日常安排
+===============================================
+
+[网站](https://podio.com/site/creative-routines)
+
+<img src="routine.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+
+
+
+
+2016温布尔登网球锦标赛
+===============================================
+
+<iframe src="http://charts.animateddata.co.uk/wimbledon/2016/matchtree/mens/" style="border:1px solid #e1e8ed;width:120%;height:560px;"></iframe>
+
+
+什么让我们快乐？
+===============================================
+
+[网站](http://charts.animateddata.co.uk/whatmakesushappy/)
+
+<img src="happy.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="900px"></img>
+
+
+
+图解机器学习
+===============================================
+
+[网站](http://www.r2d3.us/%E5%9C%96%E8%A7%A3%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%AC%AC%E4%B8%80%E7%AB%A0/)
+
+<img src="machinelearning.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+
+
+
+
+
+神经网络和深度学习怎样工作
+=================================================
+        
+[网站](http://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.65840&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=true&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=true&problem=classification&initZero=false)
+
+<img src="Neural Network.png" style="background-color:transparent; border:0px; box-shadow:none;" height="500px" width="1000px"></img>
+        
+
+
+
+普惠零首付逾期分布
+==================================================
+
+```{r,results='asis',message=FALSE,echo=FALSE,warning=FALSE, fig.height=10,fig.width=12}
+library(RgoogleMaps)
+require(maps)
+require(ggmap)
+library(dplyr)
+library(htmltools)
+library(htmlwidgets)
+library(metricsgraphics)
+library(RColorBrewer)
+library(leaflet)
+library(knitr)
+library(googleVis)
+library(readxl)
+dat=read_excel("Delay.xlsx")
+dat1=mutate(dat,
+            零首付逾期占比 = 零首付逾期个数 / 零首付注册个数,
+            非零首付逾期占比 = 非零首付逾期个数/非零首付注册个数
+  )
+
+Prov=read.csv("dat_by_prov.csv")
+Prov$prov=dat1$省
+Prov$prov<-paste(Prov$prov, "省", sep="")
+Prov$prov[c(14,18,21)]=c("内蒙古自治区","上海市","重庆市")
+
+Geo <- gvisGeoChart(Prov, locationvar="prov", colorvar="Zero.down.payment",
+                          options=list(region="CN", 
+                                       displayMode="regions", 
+                                       resolution="provinces",
+                                       colorAxis="{colors:['#FFF7F3', '#DD3497']}",
+                                       #backgroundColor="#E7E1EF",
+                                       width=600, height=400))
+Tbl <- gvisTable(Prov[,c("prov","Zero.down.payment")], options=list(height=300, width=200))
+plot(gvisMerge(Geo, Tbl, horizontal=TRUE))
+G<-gvisMerge(Geo, Tbl, horizontal=TRUE)
+print(G,"chart")
+#plot(Geo)
+
+
+```
+
+Simpsons Paradox
+====================================================
+
+<iframe src="http://blog.vctr.me/posts/simpsons-paradox.html" style="border:1px solid #e1e8ed;width:120%;height:560px;"></iframe>
+
+
+Reference
+============================
+
+* Atlas of Prejudice: [https://atlasofprejudice.com/](https://atlasofprejudice.com/)
+* FlowingData: [http://flowingdata.com/about/](http://flowingdata.com/about/)
+* TheUpShot: [http://www.nytimes.com/section/upshot](http://www.nytimes.com/section/upshot)
+* D3: [https://d3js.org/](https://d3js.org/)
+* Blog of Peter Cook: [http://animateddata.co.uk/](http://animateddata.co.uk/)
+* Hans Rosling’s talks
+
+
+Code References
+========================================================
+
+.Rpres Code in my github repository
+https://github.com/laoshen22/visualization
+
+rCharts
+http://ramnathv.github.io/rCharts/
+
+googleVis
+https://code.google.com/p/google-motion-charts-with-r/
+
+Flash Settings for Motion Chart
+http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html
+
